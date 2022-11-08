@@ -1,0 +1,46 @@
+﻿@model Pharmacy.ModelsView.HealthcareSystemViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="font-family: 'Lato', sans-serif">Listado de Obras Sociales</h1>
+
+<p>
+    <a asp-action="Create">Cargar Nueva Obra Social</a>
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <tr class="justify-content-center" style="text-align: center; font-family: 'Roboto Slab', serif;">
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.HealthcareSystemList[0].name)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody style="background-color: aquamarine;">
+        @foreach (var item in Model.HealthcareSystemList)
+        {
+            <tr style="font-family: 'Lato', sans-serif;">
+                <td style="font-size: 1.1em">
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td style="font-size: 0.8em">
+                    <a asp-action="Edit" asp-route-id="@item.id" style="color: darkblue;">
+                        Editar
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.id" style="color: darkblue;">
+                        Detalles
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.id" style="color: darkblue;">
+                        Borrar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<partial name="_pager" for="@Model.pager" />

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy", "Pharmacy\Pharmacy.csproj", "{B6C6F13E-5914-416D-80A9-181514FB282D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6C6F13E-5914-416D-80A9-181514FB282D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C6F13E-5914-416D-80A9-181514FB282D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C6F13E-5914-416D-80A9-181514FB282D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C6F13E-5914-416D-80A9-181514FB282D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F5A17AE-60F7-4B89-87CA-EC7C2881753C}
+	EndGlobalSection
+EndGlobal

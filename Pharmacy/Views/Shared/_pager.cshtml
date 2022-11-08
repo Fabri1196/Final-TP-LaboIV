@@ -1,0 +1,33 @@
+﻿@model Pharmacy.ModelsView.pager
+Total de registros encontrados: @Model.rows
+
+<nav aria-label="...">
+    <ul class="pagination justify-content-end">
+        @if (Model.currentPage != 1)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-all-route-data="@Model.ValuesQueryString" asp-route-page="1" tabindex="-1">Inicio</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" asp-all-route-data="@Model.ValuesQueryString" asp-route-page="@(Model.currentPage-1)" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" asp-all-route-data="@Model.ValuesQueryString" asp-route-page="@(Model.currentPage-1)">@(Model.currentPage - 1)</a></li>
+        }
+
+        <li class="page-item active">
+            <a class="page-link">@(Model.currentPage)<span class="sr-only">(current)</span></a>
+        </li>
+
+        @if (Model.currentPage < Model.totalPag)
+        {
+            <li class="page-item"><a class="page-link" asp-route-page="@(Model.currentPage+1)">@(Model.currentPage + 1)</a></li>
+            <li class="page-item">
+                <a class="page-link" asp-all-route-data="@Model.ValuesQueryString" asp-route-page="@(Model.currentPage + 1)">Siguiente</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" asp-all-route-data="@Model.ValuesQueryString" asp-route-page="@(Model.totalPag)">Ultima</a>
+            </li>
+        }
+
+    </ul>
+</nav>

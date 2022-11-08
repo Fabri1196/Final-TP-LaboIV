@@ -1,0 +1,103 @@
+﻿@model Pharmacy.ModelsView.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="font-family: 'Lato', sans-serif">Listado de Clientes</h1>
+
+<p>
+    <a asp-action="Create">Cargar Nuevo Cliente</a>
+</p>
+
+<form asp-action="Index" method="get" style="">
+    <p style="border: 1px black solid; padding: 5px">
+        Filtros:<br />
+        Apellido: <input type="text" name="findSurname" value="@Model.findSurname" />
+        Nombre: <input type="text" name="findName" value="@Model.findName" />
+        Obra Social: <select name="HealthcareSystemid" asp-items="@Model.HealthcareSystemList">
+            <option value="">Todas</option>
+        </select>
+        <input type="submit" value="Filtrar" class="btn btn-primary" />
+    </p>
+</form>
+
+
+
+<a asp-action="Export" style="color: darkblue;">Exportar listado a CSV</a>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr class="justify-content-center" style="text-align: center; font-family: 'Roboto Slab', serif;">
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].surname)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].name)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].photo)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].address)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].healthcareSystem)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                @Html.DisplayNameFor(model => model.CustomerList[0].CustomerMedication)
+            </th>
+            <th style="font-size: 1.5em; vertical-align: central">
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody style="background-color: aquamarine;">
+        @foreach (var item in Model.CustomerList)
+        {
+            <tr style="font-family: 'Lato', sans-serif;">
+                <td style="font-size: 1.2em; font-weight: bold">
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td style="font-size: 1.1em">
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td style="text-align: center">
+                    @if (!string.IsNullOrEmpty(item.photo))
+                    {
+                        <img src="~/photos/@item.photo" class="rounded-circle" style="max-width:50px" asp-append-version="true" />
+                    }
+                </td>
+                <td style="font-size: 1.1em">
+                    @Html.DisplayFor(modelItem => item.address)
+                </td>
+                <td style="font-size: 1.1em">
+                    @Html.DisplayFor(modelItem => item.healthcareSystem.name)
+                </td>
+                <td style="font-size: 1.1em">
+                    @foreach (var medication in item.CustomerMedication)
+                    {
+                        <p>@Html.DisplayFor(modelItem => medication.medication.name)</p>
+                    }
+                </td>
+                <td style="font-size: 0.8em">
+                    <a asp-action="Edit" asp-route-id="@item.id" style="color: darkblue;">
+                        Editar
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.id" style="color: darkblue;">
+                        Detalles
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.id" style="color: darkblue;">
+                        Borrar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="~/js//preview.js"></script>
+
+<partial name="_pager" for="@Model.pager" />
+

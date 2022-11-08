@@ -1,0 +1,24 @@
+﻿@model Pharmacy.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="font-family: 'Lato', sans-serif">Detalles de Categoría Seleccionada</h1>
+
+<div>
+    <h4>Categoría</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Editar</a> |
+    <a asp-action="Index">Volver al Listado</a>
+</div>
