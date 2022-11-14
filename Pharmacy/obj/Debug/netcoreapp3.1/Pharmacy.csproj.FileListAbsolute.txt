@@ -188,3 +188,5 @@ C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\M
 C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\Medications\Edit.cshtml.g.cs
 C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\Medications\Index.cshtml.g.cs
 C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_pager.cshtml.g.cs
+C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\Customers\Import.cshtml.g.cs
+C:\Users\Usuario\Desktop\Pharmacy\Pharmacy\obj\Debug\netcoreapp3.1\Razor\Views\Medications\Import.cshtml.g.cs
