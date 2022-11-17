@@ -10,7 +10,7 @@
 <div>
     <h4>Cliente</h4>
     <hr />
-    <dl class="row">
+    <dl class="row" style="background-color: aquamarine;">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.surname)
         </dt>
@@ -46,6 +46,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Volver al listado</a>
+        <a asp-action="Index">Volver al Listado</a>
     </form>
 </div>

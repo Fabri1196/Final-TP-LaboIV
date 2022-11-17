@@ -26,7 +26,7 @@ namespace Pharmacy.Models
         public Category category { get; set; }
 
         public int Labid { get; set; }
-        [Display(Name = "Categoria")]
+        [Display(Name = "Laboratorio")]
         public Lab lab { get; set; }
 
         [Display(Name = "Foto")]

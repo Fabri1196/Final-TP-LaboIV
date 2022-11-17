@@ -53,14 +53,14 @@
     <tbody style="background-color: aquamarine;">
         @foreach (var item in Model.CustomerList)
         {
-            <tr style="font-family: 'Lato', sans-serif;">
+            <tr style="font-family: 'Lato', sans-serif; text-align: center">
                 <td style="font-size: 1.2em; font-weight: bold">
                     @Html.DisplayFor(modelItem => item.surname)
                 </td>
-                <td style="font-size: 1.1em">
+                <td style="font-size: 1.1em" vertical-align: central">
                     @Html.DisplayFor(modelItem => item.name)
                 </td>
-                <td style="text-align: center">
+                <td>
                     @if (!string.IsNullOrEmpty(item.photo))
                     {
                         <img src="~/photos/@item.photo" class="rounded-circle" style="max-width:50px" asp-append-version="true" />
